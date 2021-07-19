@@ -80,7 +80,8 @@ class Commands(commands.Cog):
         await ctx.send(embed=Embed.from_dict({
             "title": f"Kicked {member}!",
             "description": f"Reason: {'N/A' if len(args) == 0 else ' '.join(args)}",
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat(),
+            "color": 16711379
         }))
 
     @commands.has_guild_permissions(administrator=True)

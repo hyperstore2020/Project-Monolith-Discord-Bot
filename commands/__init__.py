@@ -99,6 +99,16 @@ class Commands(commands.Cog):
             "color": 16711379
         }))
 
+    @commands.has_guild_permissions(administrator=True)
+    @commands.command(name="embed", brief="Sends an embed", usage=".embed <title> <content>")
+    async def embed(self, ctx, title: str, *args):
+        await ctx.send(embed=Embed.from_dict({
+            "title": title,
+            "description": " ".join(args),
+            "timestamp": datetime.utcnow().isoformat(),
+            "color": 16711379
+        }))
+
     @commands.cooldown(1, 5, commands.BucketType.user)
     @commands.command(name="order", brief="Creates an order", usage=".order <description(optional)>")
     async def order(self, ctx, *args):

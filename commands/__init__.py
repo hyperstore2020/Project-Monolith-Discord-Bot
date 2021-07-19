@@ -7,8 +7,6 @@ from discord.ext import commands
 from discord import Embed, Member, TextChannel
 from discord.ext.commands import AutoShardedBot
 
-from commands.exceptions import OrderError
-
 
 class Commands(commands.Cog):
     def __init__(self, bot: AutoShardedBot):
